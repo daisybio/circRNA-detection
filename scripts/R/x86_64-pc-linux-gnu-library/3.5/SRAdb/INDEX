@@ -1,0 +1,36 @@
+IGVclear                Clear IGV tracks loaded.
+IGVcollapse             Collapse tracks in the IGV
+IGVgenome               Set the IGV genome.
+IGVgoto                 Go to a specified region in IGV.
+IGVload                 Load data into IGV via remote port call.
+IGVsession              Create an IGV session file
+IGVsnapshot             Make a file snapshot of the current IGV screen.
+IGVsocket               Create a Socket Connection to IGV.
+IGVsort                 Sort an alignment track by the specified
+                        option.
+SRAdb-package           Query NCBI SRA metadata within R or from a
+                        local SQLite database
+ascpR                   Fasp file downloading using the ascp command
+                        line program
+ascpSRA                 Fasp SRA data file downloading using the ascp
+                        command line program
+colDescriptions         Get column descriptions of SRAmetadb.sqlite
+entityGraph             Create a new graphNEL object from an input
+                        entity matrix or data.frame
+getFASTQfile            Download SRA fastq files from EBI ENA through
+                        ftp or fasp
+getFASTQinfo            Get SRA fastq file information and associated
+                        meta data from EBI ENA
+getSRA                  Fulltext search SRA meta data using SQLite fts3
+                        module
+getSRAdbFile            Download and unzip last version of
+                        SRAmetadb.sqlite.gz from the server
+getSRAfile              Download SRA data file through ftp or fasp
+getSRAinfo              Get SRA data file information from NCBI SRA
+listSRAfile             List sra, sra-lite or fastq data file names
+                        associated with input SRA accessions
+sraConvert              Cross-reference between GEO data types
+sraGraph                Create a new graphNEL object of SRA accessios
+                        from SRA full text search
+startIGV                Start IGV from R with different amount maximum
+                        memory support
