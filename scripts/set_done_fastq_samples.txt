@@ -1,0 +1,14 @@
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720118_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720119_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720120_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720121_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720122_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720123_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720125_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720126_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720127_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720131_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720132_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720133_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720134_1.fastq
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720135_1.fastq

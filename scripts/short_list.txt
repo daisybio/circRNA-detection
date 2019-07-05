@@ -1,0 +1,1 @@
+/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720118_1.fastq
