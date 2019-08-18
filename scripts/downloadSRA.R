@@ -4,4 +4,9 @@ library(SRAdb)
 srafile = getSRAdbFile()
 file.info(srafile)
 con = dbConnect(RSQLite::SQLite(),srafile)
-getSRAfile('SRP109830',con,fileType='sra')
+#rRNA depleted
+#getSRAfile('SRP109830',con,fileType='sra')
+#mRNA
+getSRAfile('SRP096017',con,fileType='sra')
+#miRNA
+getSRAfile('SRP096019',con,fileType='sra')
