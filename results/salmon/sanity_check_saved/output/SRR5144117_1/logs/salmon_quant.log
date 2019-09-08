@@ -1,0 +1,11 @@
+[2019-08-20 01:28:57.614] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2019-08-20 01:28:57.614] [jointLog] [info] Usage of --validateMappings implies use of minScoreFraction. Since not explicitly specified, it is being set to 0.65
+[2019-08-20 01:28:57.614] [jointLog] [info] Usage of --validateMappings, without --hardFilter implies use of range factorization. rangeFactorizationBins is being set to 4
+[2019-08-20 01:28:57.614] [jointLog] [info] Usage of --validateMappings implies a default consensus slack of 0.2. Setting consensusSlack to 0.2.
+[2019-08-20 01:28:57.614] [jointLog] [info] parsing read library format
+[2019-08-20 01:28:57.614] [jointLog] [info] There is 1 library.
+[2019-08-20 01:28:57.686] [jointLog] [info] Loading Quasi index
+[2019-08-20 01:28:57.686] [jointLog] [info] Loading 32-bit quasi index
+[2019-08-20 01:28:57.687] [jointLog] [info] done
+[2019-08-20 01:28:57.687] [jointLog] [info] Index contained 2 targets
+[2019-08-20 01:29:37.946] [jointLog] [warning] salmon was only able to assign 0 fragments to transcripts in the index, but the minimum number of required assigned fragments (--minAssignedFrags) was 10. This could be indicative of a mismatch between the reference and sample, or a very bad sample.  You can change the --minAssignedFrags parameter to force salmon to quantify with fewer assigned fragments (must have at least 1).

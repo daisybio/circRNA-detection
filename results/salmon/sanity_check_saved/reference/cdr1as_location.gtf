@@ -1,0 +1,2 @@
+X	manual	gene	61183248	61186174	.	+	.	gene_id "G_Cdr1as"; gene_version "1"; gene_name "Cdr1as"; gene_source "manual"; gene_biotype "antisense";
+X	manual	transcript	61183248	61186174	.	+	.	gene_id "G_Cdr1as"; gene_version "1"; transcript_id "T_Cdr1as"; transcript_version "1"; gene_name "Cdr1as"; gene_source "manual"; gene_biotype "antisense"; transcript_name "Cdr1as"; transcript_source "manual"; transcript_biotype "antisense"; tag "basic"; transcript_support_level "NA";

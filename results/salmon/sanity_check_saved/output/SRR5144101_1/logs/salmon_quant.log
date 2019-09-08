@@ -1,0 +1,38 @@
+[2019-08-20 01:18:24.865] [jointLog] [info] Fragment incompatibility prior below threshold.  Incompatible fragments will be ignored.
+[2019-08-20 01:18:24.865] [jointLog] [info] Usage of --validateMappings implies use of minScoreFraction. Since not explicitly specified, it is being set to 0.65
+[2019-08-20 01:18:24.865] [jointLog] [info] Usage of --validateMappings, without --hardFilter implies use of range factorization. rangeFactorizationBins is being set to 4
+[2019-08-20 01:18:24.865] [jointLog] [info] Usage of --validateMappings implies a default consensus slack of 0.2. Setting consensusSlack to 0.2.
+[2019-08-20 01:18:24.865] [jointLog] [info] parsing read library format
+[2019-08-20 01:18:24.865] [jointLog] [info] There is 1 library.
+[2019-08-20 01:18:24.922] [jointLog] [info] Loading Quasi index
+[2019-08-20 01:18:24.922] [jointLog] [info] Loading 32-bit quasi index
+[2019-08-20 01:18:24.923] [jointLog] [info] done
+[2019-08-20 01:18:24.923] [jointLog] [info] Index contained 2 targets
+[2019-08-20 01:19:10.642] [fileLog] [info] 
+At end of round 0
+==================
+Observed 42675155 total fragments (42675155 in most recent round)
+
+[2019-08-20 01:19:10.642] [jointLog] [info] Computed 1 rich equivalence classes for further processing
+[2019-08-20 01:19:10.642] [jointLog] [info] Counted 194 total reads in the equivalence classes 
+[2019-08-20 01:19:10.660] [jointLog] [info] Number of mappings discarded because of alignment score : 194
+[2019-08-20 01:19:10.660] [jointLog] [info] Number of fragments entirely discarded because of alignment score : 42,674,961
+[2019-08-20 01:19:10.660] [jointLog] [info] Number of fragments discarded because they are best-mapped to decoys : 6
+[2019-08-20 01:19:10.660] [jointLog] [info] Number of fragments discarded because they have only dovetail (discordant) mappings : 0
+[2019-08-20 01:19:10.661] [jointLog] [warning] Only 194 fragments were mapped, but the number of burn-in fragments was set to 5000000.
+The effective lengths have been computed using the observed mappings.
+
+[2019-08-20 01:19:10.661] [jointLog] [info] Mapping rate = 0.000454597%
+
+[2019-08-20 01:19:10.661] [jointLog] [info] finished quantifyLibrary()
+[2019-08-20 01:19:10.664] [jointLog] [info] Starting optimizer
+[2019-08-20 01:19:10.665] [jointLog] [info] Marked 0 weighted equivalence classes as degenerate
+[2019-08-20 01:19:10.665] [jointLog] [info] iteration = 0 | max rel diff. = 2.93007e-16
+[2019-08-20 01:19:10.665] [jointLog] [info] iteration = 100 | max rel diff. = 0
+[2019-08-20 01:19:10.665] [jointLog] [info] Finished optimizer
+[2019-08-20 01:19:10.665] [jointLog] [info] writing output 
+
+[2019-08-20 01:19:10.666] [jointLog] [warning] NOTE: Read Lib [[ /data/home/students/ciora//data/mouse_brain_GSE100265/fastq/mRNA_SRP096017/SRR5144101_1.fastq ]] :
+
+Detected a *potential* strand bias > 1% in an unstranded protocol check the file: /data/home/students/ciora/methods/salmon/sanity_check/output//SRR5144101_1/lib_format_counts.json for details
+

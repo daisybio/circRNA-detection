@@ -1,0 +1,9 @@
+{
+    "salmon_version": "0.14.1",
+    "index": "/data/home/students/ciora/methods/salmon/sanity_check/transcripts_index/",
+    "libType": "A",
+    "unmatedReads": "/data/home/students/ciora//data/mouse_brain_GSE100265/fastq/mRNA_SRP096017/SRR5144110_1.fastq",
+    "validateMappings": [],
+    "output": "/data/home/students/ciora/methods/salmon/sanity_check/output//SRR5144110_1/",
+    "auxDir": "aux_info"
+}
