@@ -4,6 +4,7 @@ folder <- "/data/home/students/ciora/methods/circexplorer2_method/final_test/"
 samples <- c("SRR5720118", "SRR5720119", "SRR5720120", "SRR5720121", "SRR5720122", "SRR5720123", "SRR5720124", "SRR5720125", "SRR5720126", "SRR5720127", "SRR5720128", "SRR5720129", "SRR5720130", "SRR5720131", "SRR5720132", "SRR5720133", "SRR5720134", "SRR5720135", "SRR5720136", "SRR5720137", "SRR5720138", "SRR5720139", "SRR5720140", "SRR5720141")
 alldata <- NULL
 finaldata <- NULL
+finaldata_cutoff <- NULL
 counts <- c()
 counts_cutoff <- c()
 cutoff <- 5
@@ -13,21 +14,52 @@ for (i in 1:length(samples)){
   counts[i] <- nrow(sample_out)
   names(counts)[i] <- samples[i]
   counts_cutoff[i] <- nrow(sample_out[sample_out[,13]>cutoff,])
+  sample_cutoff <- sample_out[sample_out[,13]>cutoff,]
   names(counts_cutoff)[i] <- samples[i]
   expression <- sample_out[,c(1,2,3,6,13,15,16)]
+  expression_cutoff <- sample_cutoff[,c(1,2,3,6,13,15,16)]
   colnames(expression) <- c("chr", "start", "stop", "strand", samples[i], paste("gene_", samples[i], sep = ""), paste("isoform_", samples[i], sep = ""))
   expression <- expression[,c(1,2,3,4,5)]
+  colnames(expression_cutoff) <- c("chr", "start", "stop", "strand", samples[i], paste("gene_", samples[i], sep = ""), paste("isoform_", samples[i], sep = ""))
+  expression_cutoff <- expression_cutoff[,c(1,2,3,4,5)]
   if(is.null(finaldata)){
     finaldata <- expression
+    finaldata_cutoff <- expression_cutoff
     alldata <- expression[,samples[i]]
   } else {
     finaldata <- merge(finaldata, expression, by = c("chr", "start", "stop", "strand"), all = T)
+    finaldata_cutoff<- merge(finaldata_cutoff, expression_cutoff, by = c("chr", "start", "stop", "strand"), all = T)
     alldata <- append(alldata, expression[,samples[i]])
     }
   
 }
 finaldata[is.na(finaldata)] <- 0
+finaldata_cutoff[is.na(finaldata_cutoff)] <- 0
 #write.table(finaldata, "/data/home/students/ciora/methods/circexplorer2_method/circRNA_results.tsv", quote = F, sep = "\t", row.names = F)
+
+
+# filter data (cutoff > 5) and circRNA present in minimum 3 samples
+print(nrow(finaldata_cutoff))
+rows_to_keep <- c()
+for (i in 1:nrow(finaldata_cutoff)){
+  number_of_samples_containing_this_circRNA <- 0
+  for (j in 5:ncol(finaldata_cutoff)){
+    if(finaldata_cutoff[i,j]>0){
+      number_of_samples_containing_this_circRNA <- number_of_samples_containing_this_circRNA + 1
+    }
+  }
+  if(number_of_samples_containing_this_circRNA >= 3){
+    rows_to_keep <- append(rows_to_keep, i)
+  }
+  
+}
+
+filtered_data <- finaldata_cutoff[rows_to_keep,]
+print(nrow(filtered_data))
+write.table(filtered_data, "/data/home/students/ciora/methods/circexplorer2_method/circRNA_filtered_results.tsv", quote = F, sep = "\t", row.names = F)
+
+
+
 
 counts <- data.frame(sample=names(counts),counts)
 counts_cutoff <- data.frame(sample=names(counts_cutoff), counts_cutoff)

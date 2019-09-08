@@ -8,6 +8,3 @@
 /data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720139_1.fastq
 /data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720140_1.fastq
 /data/home/students/ciora//data/mouse_brain_GSE100265/fastq/rRNAdepleted_SRP109830/SRR5720141_1.fastq
-
-
-

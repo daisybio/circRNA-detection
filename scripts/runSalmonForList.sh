@@ -21,6 +21,7 @@ do
 	echo "Starting Salmon"
 	echo "$(date) $sample Starting Salmon" >> $progress_file
 	salmon quant -i $index_dir --libType A -r $fastq --validateMappings -o $sample_out
+#	salmon quant -i $index_dir --libType SR -r $fastq --validateMappings -o $sample_out
 	echo "$sample done"
 	echo "$(date) $sample done" >> $progress_file
 done < $file_list
