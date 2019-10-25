@@ -1,3 +1,0 @@
-importFrom(RCurl, getURL, curlOptions)
-importFrom(GEOquery, gunzip)
-exportPattern("^[[:alpha:]]+")
