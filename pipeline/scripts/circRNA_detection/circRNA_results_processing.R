@@ -8,8 +8,8 @@ output_dir = args[2]
 
 library(ggplot2)
 
-#dataset_path <- "/nfs/home/students/ciora/testing_data/small_testing/dataset_whole.txt"
-#output_dir <- "/nfs/home/students/ciora/testing_data/small_testing/output_whole/"
+dataset_path <- "/nfs/home/students/ciora/testing_data/big_testing/dataset.tsv"
+output_dir <- "/nfs/home/students/ciora/testing_data/big_testing/after_mapping/"
 
 dataset <- read.table(dataset_path, sep = "\t", header=F, stringsAsFactors = F)
 samples <- dataset$V1
