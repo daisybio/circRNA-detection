@@ -1,7 +1,9 @@
 library(plyr)
 library(dplyr)
-file <- "/data/home/students/ciora/methods/miRanda/output/circRNA_bind_sites_results.txt"
-plot_folder <- "/data/home/students/ciora/circRNA-detection/plots/binding_sites/"
+library(ggplot2)
+
+file <- "/nfs/home/students/ciora/methods/miRanda/output/circRNA_bind_sites_results.txt"
+plot_folder <- "/nfs/home/students/ciora/circRNA-detection/plots/binding_sites/"
 raw_bindSites <- read.table(file, header = T, stringsAsFactors = F)
 bindSites <- raw_bindSites[,c(1,2)]
 
@@ -9,8 +11,12 @@ allBindSites <- count(bindSites, Target, name="freq")
 distinct <- distinct(bindSites)
 distinctBindSites <- count(distinct, Target, name="freq")
 
-write.table(raw_bindSites, file = "/data/home/students/ciora/circRNA-detection/results/miRanda/bindsites_raw.tsv", sep = "\t", quote = F, row.names = F)
-write.table(allBindSites, file = "/data/home/students/ciora/circRNA-detection/results/miRanda/bindsites_per_circRNA.tsv", sep = "\t", quote = F, row.names = F)
+write.table(raw_bindSites, file = "/nfs/home/students/ciora/circRNA-detection/results/miRanda/bindsites_raw.tsv", sep = "\t", quote = F, row.names = F)
+write.table(allBindSites, file = "/nfs/home/students/ciora/circRNA-detection/results/miRanda/bindsites_per_circRNA.tsv", sep = "\t", quote = F, row.names = F)
+
+
+allBindSites = read.table("/nfs/home/students/ciora/circRNA-detection/results/miRanda/bindsites_per_circRNA.tsv", header = T, stringsAsFactors = F)
+
 
 ggplot(distinctBindSites, aes(x=Target, y=freq)) + geom_bar(stat="identity", color = "red", fill= "red") + 
   theme(axis.text.x=element_blank(), axis.ticks.x=element_blank()) +
@@ -47,7 +53,7 @@ ggplot(data=scores, aes(x=Score)) + geom_histogram(fill=I("red"), col=I("red"), 
   geom_vline(xintercept=quantile(scores$Score, 0.25), linetype="dashed", 
              color = "blue", size=0.5) +
   annotate("text", x = quantile(scores$Score, 0.25) - 2, y = 1000000, label = "25%", color = "blue", angle = 90)
-ggsave(paste("/data/home/students/ciora/circRNA-detection/plots/binding_sites/miRanda_score_distribution.png", sep = ""), width = 8, height = 4)
+ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/binding_sites/miRanda_score_distribution.png", sep = ""), width = 8, height = 4)
 
 # fiter 25% worst scores
 filtered_scores <- raw_bindSites[raw_bindSites$Score > quantile(raw_bindSites$Score, 0.25),]
@@ -84,22 +90,9 @@ ggsave(paste(plot_folder, "all_bind_sites_histogram_filtered.png", sep=""), widt
   ggsave(paste(plot_folder, "distinct_bind_sites_histogram_filtered.png", sep=""), width = 6, height = 4)
   
 
-  
-  # compute length of every circRNA
-  f = function(x, output) {
-    # x is the row of type Character
-    circRNA = as.character(x[1])
-    start <- as.numeric(sapply(strsplit(sapply(strsplit(as.character(circRNA),':'), "[", 2),'-'), "[", 1))
-    end <- as.numeric(sapply(strsplit(sapply(strsplit(as.character(circRNA),'-'), "[", 2),'_'), "[", 1))
-    length <- end - start
-    freq = x[2]
-    print(length)
-    #your code to process x
-  }
-  
-  result <- apply(allBindSites, 1, f)
-  allBindSites$length <- result
-  
+
+
+
   ggscatter(allBindSites, x = "freq", y = "length",
             add = "reg.line",  # Add regressin line
             add.params = list(color = "blue", fill = "lightgray"), # Customize reg. line
@@ -107,7 +100,7 @@ ggsave(paste(plot_folder, "all_bind_sites_histogram_filtered.png", sep=""), widt
     ggtitle("Correlation: length vs. binding sites of circRNA") +
     xlab("Number of binding sites") + ylab("Length of circRNA")
   
-  ggsave("/data/home/students/ciora/circRNA-detection/plots/binding_sites/corr_length_bindsites_filtered.png", width = 6, height = 4)
+  ggsave("/nfs/home/students/ciora/circRNA-detection/plots/binding_sites/corr_length_bindsites_filtered.png", width = 6, height = 4)
   
   
   

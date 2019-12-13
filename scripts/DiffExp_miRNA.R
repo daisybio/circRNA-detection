@@ -7,12 +7,12 @@ log2FClevel = 1
 padjlevel=0.05
 
 # preprocessing counts table
-counts <- read.table("/data/home/students/ciora/circRNA-detection/results/miRNA/miRDeep2/miRNA_counts_all_samples.tsv", sep = "\t", header=T, stringsAsFactors = F)
+counts <- read.table("/nfs/home/students/ciora/circRNA-detection/results/miRNA/miRDeep2/miRNA_counts_all_samples.tsv", sep = "\t", header=T, stringsAsFactors = F)
 rownames(counts) <- counts$miRNA
 counts$miRNA <- NULL
 
 # preprocessing dataset information
-dataset_structure <- read.table("/data/home/students/ciora/data/mouse_brain_GSE100265/miRNA_dataset", sep = "\t", header=F, stringsAsFactors = F)
+dataset_structure <- read.table("/nfs/home/students/ciora/data/mouse_brain_GSE100265/miRNA_dataset", sep = "\t", header=F, stringsAsFactors = F)
 dataset <- dataset_structure[,c(1,3)]
 colnames(dataset) <- c("sample","region")
 dataset$condition <- sapply(strsplit(as.character(dataset_structure$V4),'_'), "[", 1)
@@ -46,13 +46,13 @@ for( i in (1:length(regions))){
   
   #write all results
   write.table(as.data.frame(resOrdered), quote = F, sep = "\t",
-              file=paste("/data/home/students/ciora/circRNA-detection/results/miRNA/DiffExp/DE_miRNA_WTvsKO_", specific_region, "_all.tsv", sep = ""))
+              file=paste("/nfs/home/students/ciora/circRNA-detection/results/miRNA/DiffExp/DE_miRNA_WTvsKO_", specific_region, "_all.tsv", sep = ""))
   
   #write only significant results
   resSig <- subset(resOrdered, padj < padjlevel & abs(log2FoldChange) >= log2FClevel)
   resSig <- as.data.frame(resSig)
   write.table(as.data.frame(resSig), quote = F, sep = "\t",
-              file=paste("/data/home/students/ciora/circRNA-detection/results/miRNA/DiffExp/DE_miRNA_WTvsKO_", specific_region, "_significant_padj<", padjlevel, "log2FC>=" ,log2FClevel,".tsv", sep = ""))
+              file=paste("/nfs/home/students/ciora/circRNA-detection/results/miRNA/DiffExp/DE_miRNA_WTvsKO_", specific_region, "_significant_padj<", padjlevel, "log2FC>=" ,log2FClevel,".tsv", sep = ""))
 
   #summarize all significant miRNAs to one table
   if(nrow(resSig) > 0){
@@ -64,7 +64,7 @@ for( i in (1:length(regions))){
 }
 
 write.table(as.data.frame(significant_miRNAs), quote = F, row.names = F, sep = "\t",
-            file=paste("/data/home/students/ciora/circRNA-detection/results/miRNA/DiffExp/significant_miRNAs_all_regions_padj<", padjlevel, "log2FC>=" ,log2FClevel, ".tsv", sep = ""))
+            file=paste("/nfs/home/students/ciora/circRNA-detection/results/miRNA/DiffExp/significant_miRNAs_all_regions_padj<", padjlevel, "log2FC>=" ,log2FClevel, ".tsv", sep = ""))
 
 #plotMA(res, ylim=c(-5,5))
 
@@ -72,7 +72,7 @@ write.table(as.data.frame(significant_miRNAs), quote = F, row.names = F, sep = "
 plots <- list()
 for(j in 1:length(regions)){
   reg <- regions[j]
-  path <- paste("/data/home/students/ciora/circRNA-detection/results/miRNA/DiffExp/DE_miRNA_WTvsKO_", reg, "_all.tsv", sep = "")
+  path <- paste("/nfs/home/students/ciora/circRNA-detection/results/miRNA/DiffExp/DE_miRNA_WTvsKO_", reg, "_all.tsv", sep = "")
   table <- read.table(path, header = T)
   table$Legend <- "non-significant"
   table$Legend[abs(table$log2FoldChange) > log2FClevel & table$padj <= padjlevel] <- "significant"
@@ -92,7 +92,7 @@ for(j in 1:length(regions)){
     #annotate("text", label = paste("log2FC >", log2FClevel), 
     #         x = 1, y = 2, color = "black", size = 3, angle = 90)
   }
-png(paste("/data/home/students/ciora/circRNA-detection/plots/miRNA/DE_miRNAs_regions_padj<", padjlevel, "log2FC>=" ,log2FClevel,".png", sep = ""), width = 700, height = 600)
+png(paste("/nfs/home/students/ciora/circRNA-detection/plots/miRNA/DE_miRNAs_regions_padj<", padjlevel, "log2FC>=" ,log2FClevel,".png", sep = ""), width = 700, height = 600)
 grid.arrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], layout_matrix = rbind(c(1, 2),c(3, 4)), top = textGrob("Differentially expressed miRNAs (WT vs. KO)", gp = gpar(fontsize = 17, font = 1)))
 dev.off()
 
