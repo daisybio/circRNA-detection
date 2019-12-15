@@ -1,7 +1,7 @@
 # circRNA Sponging Analysis on Mouse Data
 
 ## Overview
-This analysis consists of several setps:
+This analysis consists of the following setps:
 1. Detection of circRNAs from total RNA-seq data
 2. Quantification of miRNAs from small RNA-seq data
 3. Quantification of mRNAs from RNA-seq data
