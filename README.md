@@ -4,13 +4,13 @@
 This analysis consists of several setps:
 1. Detection of circRNAs from total RNA-seq data
 2. Quantification of miRNAs from small RNA-seq data
-3. Quantification of mRNAs from RNA-ses data
+3. Quantification of mRNAs from RNA-seq data
 4. Detection of miRNA binding sites on previously found circRNAs
 5. Correlation analysis between miRNAs and circRNAs
-6. Further analysis
+6. Further sponging analysis
 
 ## Dataset
-This analysis was done on mouse data covering four brain regions (cerebellum, cortex, hippocampus, olfactory bulb) and two conditions (wild-type and knockout). This data was obtained through three different sequencing methods (RNA-seq, total RNA-seq, small RNA-seq) The dataset was produced by the Rajewsky lab in 2017 and is available in the GEO database under the accession number GSE93130.
+This analysis was done using mouse data covering four brain regions (cerebellum, cortex, hippocampus, olfactory bulb) and two conditions (wild-type and knockout). This data was obtained through three different sequencing methods (RNA-seq, total RNA-seq, small RNA-seq) The dataset was produced by the Rajewsky lab in 2017 and is available in the GEO database under the accession number GSE93130.
 
 ## Documentation
 The ```documentation/``` folder contains step-by-step descriptions of the quantification of miRNAs, circRNAs, mRNAs and detection of binding sites. These are provided as Jupyter Notebooks and include the installation and usage of external tools.
