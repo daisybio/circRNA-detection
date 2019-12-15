@@ -9,8 +9,18 @@ This analysis consists of several setps:
 5. Correlation analysis between miRNAs and circRNAs
 6. Further analysis
 
+## Dataset
+This analysis was done on mouse data covering four brain regions (cerebellum, cortex, hippocampus, olfactory bulb) and two conditions (wild-type and knockout). This data was obtained through three different sequencing methods (RNA-seq, total RNA-seq, small RNA-seq) The dataset was produced by the Rajewsky lab in 2017 and is available in the GEO database under the accession number GSE93130.
+
+## Documentation
+The ```documentation/``` folder contains step-by-step descriptions of the quantification of miRNAs, circRNAs, mRNAs and detection of binding sites. These are provided as Jupyter Notebooks and include the installation of external tools.
+
+## Results
+The ```results/``` folder contains the quantified expression of miRNAs, mRNAs, circRNAs and correlation results.
+
 ## Scripts
 All used scripts are provided in the ```scripts/``` folder.
+```bash
 addFilesToList.sh                       get a list of all files in a folder
 amount_circRNA.R                        visualization of circRNA detection results        
 amount_mRNA.R                           visualization of circRNA detection results                                   
@@ -31,9 +41,7 @@ runCIRCExplorer2ForList.sh              circRNA detection for a list of samples 
 runSalmonForList.sh                     mRNA quantification for a list of samples using Salmon
 samples_PCA.R                           PCA sample clustering and visualization of mRNA counts
 SRAtoFastq.sh                           convert SRA files to fastq
+```
 
-## Documentation
-The documentation folder contains step-by-step descriptions of the quantification of miRNAs, circRNAs, mRNAs and detection of binding sites. These are provided as Jupyter Notebooks and include the installationg of used tools and 
 
-## Dataset
-This analysis was done on mouse data covering four brain regions (cerebellum, cortex, hippocampus, olfactory bulb) and two conditions (wild-type and knockout). The dataset was produced by the Rajewsky lab in 2017 and is available on https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE93130.
+
