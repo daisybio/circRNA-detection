@@ -1,2 +1,0 @@
-#install.packages("ggplot2", dependencies=TRUE, repos='http://cran.rstudio.com/')
-install.packages(c("ggplot2", "plyr", "dplyr", "data.table", "gridExtra", "grid", "ggpubr"), dependencies=TRUE, repos='http://cran.rstudio.com/')
