@@ -23,7 +23,7 @@ All used scripts are provided in the ```scripts/``` folder.
 ```bash
 addFilesToList.sh                       # get a list of all files in a folder
 amount_circRNA.R                        # visualization of circRNA detection results        
-amount_mRNA.R                           # visualization of circRNA detection results                                   
+amount_mRNA.R                           # visualization of mRNA quantification results                                   
 binding_sites_plot.R                    # analysis and visualization of binding sites results           
 circRNA_length_distribution.R           # visualization of lengths for detected circRNAs         
 clipAdapters.sh                         # clip adapters using flexbar
@@ -34,7 +34,7 @@ downloadSRA.R                           # download all samples of a dataset in S
 genome_visualization.R                  # genomic visualization of sponged miRNAs and circRNAs found on the ATXN1 gene
 get_circRNA_sequences.sh                # extract fastq sequences for all detected circRNAs
 miRNA_comparison.R                      # consistency analysis for miRNAs
-miRNA_identification_miRDeep2.sh        # miRNA quantification for a list of samples unsing miRDeep2
+miRNA_identification_miRDeep2.sh        # miRNA quantification for a list of samples using miRDeep2
 mRNA_to_gene_level.R                    # transform transcript-level counts to gene-level counts for mRNA Salmon mapping
 preprocesing_miRNA_miRDeep2.sh          # data preparation for miRDeep2
 runCIRCExplorer2ForList.sh              # circRNA detection for a list of samples using CIRCExplorer2
