@@ -31,7 +31,7 @@ correlation.R                           # correlation analysis for all circRNA-m
 countAdapters.sh                        # check whether adapter clipping was successfull
 DiffExp_miRNA.R                         # differential expression analysis for miRNA data (WT vs. KO)
 downloadSRA.R                           # download all samples of a dataset in SRA format
-genome_vizualisation.R                  # genomic visualization of sponged miRNAs and circRNAs found on the ATXN1 gene
+genome_visualization.R                  # genomic visualization of sponged miRNAs and circRNAs found on the ATXN1 gene
 get_circRNA_sequences.sh                # extract fastq sequences for all detected circRNAs
 miRNA_comparison.R                      # consistency analysis for miRNAs
 miRNA_identification_miRDeep2.sh        # miRNA quantification for a list of samples unsing miRDeep2
