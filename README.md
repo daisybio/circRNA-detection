@@ -13,7 +13,7 @@ This analysis consists of several setps:
 This analysis was done on mouse data covering four brain regions (cerebellum, cortex, hippocampus, olfactory bulb) and two conditions (wild-type and knockout). This data was obtained through three different sequencing methods (RNA-seq, total RNA-seq, small RNA-seq) The dataset was produced by the Rajewsky lab in 2017 and is available in the GEO database under the accession number GSE93130.
 
 ## Documentation
-The ```documentation/``` folder contains step-by-step descriptions of the quantification of miRNAs, circRNAs, mRNAs and detection of binding sites. These are provided as Jupyter Notebooks and include the installation of external tools.
+The ```documentation/``` folder contains step-by-step descriptions of the quantification of miRNAs, circRNAs, mRNAs and detection of binding sites. These are provided as Jupyter Notebooks and include the installation and usage of external tools.
 
 ## Results
 The ```results/``` folder contains the expression data for miRNAs, mRNAs, circRNAs and correlation results.
