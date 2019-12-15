@@ -92,7 +92,7 @@ for(j in 1:length(regions)){
     #annotate("text", label = paste("log2FC >", log2FClevel), 
     #         x = 1, y = 2, color = "black", size = 3, angle = 90)
   }
-png(paste("/nfs/home/students/ciora/circRNA-detection/plots/miRNA/DE_miRNAs_regions_padj<", padjlevel, "log2FC>=" ,log2FClevel,".png", sep = ""), width = 700, height = 600)
+png(paste("/nfs/home/students/ciora/plots/miRNA/DE_miRNAs_regions_padj<", padjlevel, "log2FC>=" ,log2FClevel,".png", sep = ""), width = 700, height = 600)
 grid.arrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], layout_matrix = rbind(c(1, 2),c(3, 4)), top = textGrob("Differentially expressed miRNAs (WT vs. KO)", gp = gpar(fontsize = 17, font = 1)))
 dev.off()
 

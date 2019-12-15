@@ -20,7 +20,7 @@ df_out$group <- sapply( substr(row.names(df), 1,6),"[[", 1  )
 
 ggplot(df_out,aes(x=PC2,y=PC4,color=group ))+geom_point()+ggtitle("circRNA counts")
 
-ggsave("/nfs/home/students/ciora/circRNA-detection/plots/analysis/PCA_circRNA_samples_2_4.png", width = 4, height = 3)
+ggsave("/nfs/home/students/ciora/plots/analysis/PCA_circRNA_samples_2_4.png", width = 4, height = 3)
 
 
 
@@ -41,5 +41,5 @@ df_out$group <- sapply( strsplit(as.character(row.names(df)), "_"), "[[", 1 )
 
 ggplot(df_out,aes(x=PC3,y=PC4,color=group ))+geom_point()+ggtitle("gene counts")
 
-ggsave("/nfs/home/students/ciora/circRNA-detection/plots/analysis/PCA_mRNA_samples_3_4.png", width = 4, height = 3)
+ggsave("/nfs/home/students/ciora/plots/analysis/PCA_mRNA_samples_3_4.png", width = 4, height = 3)
 

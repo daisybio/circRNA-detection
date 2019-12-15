@@ -49,7 +49,7 @@ for(i in 1:length(my_samples)){
                    conf.int = TRUE # Add confidence interval
    ) + stat_cor(method = "pearson") + ggtitle(paste("sample",  i)) + xlab("Current counts (millions)") + ylab("Ryback counts (millions)")
    plots[[i]]
-  # ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/miRNA/samples/miRNA_mapping_mine-paper-correlation_", my_sample, ".png", sep = ""), width = 8, height = 4)
+  # ggsave(paste("/nfs/home/students/ciora/plots/miRNA/samples/miRNA_mapping_mine-paper-correlation_", my_sample, ".png", sep = ""), width = 8, height = 4)
   
    
    # # Consistency plots for each sample
@@ -57,12 +57,12 @@ for(i in 1:length(my_samples)){
    #   geom_point() + xlim(0,2500) + ylim(0,2500) +
    #   ggtitle(paste("Consistency of miRNA mapping using miRDeep2 for sample ", my_sample, "", sep = "")) + 
    #   xlab("My read counts") + ylab("Paper read counts") 
-   # ggsave(paste("/data/home/students/ciora/circRNA-detection/plots/miRNA/samples/miRNA_mapping_mine_vs_paper_", my_sample, "_small.png", sep = ""), width = 8, height = 4)
+   # ggsave(paste("/nfs/home/students/ciora/plots/miRNA/samples/miRNA_mapping_mine_vs_paper_", my_sample, "_small.png", sep = ""), width = 8, height = 4)
   # 
   # ggplot(comparedCounts, aes(x=my_counts, y=paper_counts)) + geom_point() +
   #   ggtitle(paste("Consistency of miRNA mapping using miRDeep2 for sample ", my_sample, "", sep = "")) + 
   #   xlab("My read counts") + ylab("Paper read counts")
-  # ggsave(paste("/data/home/students/ciora/circRNA-detection/plots/miRNA/samples/miRNA_mapping_mine_vs_paper_", my_sample, "_whole.png", sep = ""), width = 8, height = 4)
+  # ggsave(paste("/nfs/home/students/ciora/plots/miRNA/samples/miRNA_mapping_mine_vs_paper_", my_sample, "_whole.png", sep = ""), width = 8, height = 4)
    
    nonzero_counts <- my_counts[my_counts$my_counts > 0,]
    colnames(nonzero_counts)[2] <- "reads"
@@ -76,7 +76,7 @@ for(i in 1:length(my_samples)){
          xlab="Read counts (> 0)",
          ylab="Number of miRNAs")
    
-  #ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/miRNA/samples/miRNA_read_distribution_", my_sample, "_whole.png", sep = ""), width = 8, height = 4)
+  #ggsave(paste("/nfs/home/students/ciora/plots/miRNA/samples/miRNA_read_distribution_", my_sample, "_whole.png", sep = ""), width = 8, height = 4)
   
   qplot(nonzero_counts$reads,
         geom="histogram",
@@ -89,19 +89,19 @@ for(i in 1:length(my_samples)){
         ylab="Number of miRNAs",
         xlim=c(1,5000),
         ylim=c(0,100))
-   #ggsave(paste("/data/home/students/ciora/circRNA-detection/plots/miRNA/samples/miRNA_read_distribution_", my_sample, "_small.png", sep = ""), width = 8, height = 4)
+   #ggsave(paste("/nfs/home/students/ciora/plots/miRNA/samples/miRNA_read_distribution_", my_sample, "_small.png", sep = ""), width = 8, height = 4)
  
   # # read distribution mine vs paper
   # ggplot(comparedCounts, aes(x=my_counts)) + geom_histogram(fill=rgb(1,0,0,0.3)) + 
   #  xlim(0,2500) + ylim(0,90) + geom_histogram(aes(x=paper_counts), fill=rgb(0,0,1,0.3))
 }
  whole_dataset_results[is.na(whole_dataset_results)]  <- 0
- #write.table(whole_dataset_results, "/data/home/students/ciora/circRNA-detection/results/miRDeep2/miRNA_counts_all_samples.tsv", quote = F, sep = "\t", row.names = F)
+ #write.table(whole_dataset_results, "/nfs/home/students/ciora/circRNA-detection/results/miRDeep2/miRNA_counts_all_samples.tsv", quote = F, sep = "\t", row.names = F)
  
- png("/nfs/home/students/ciora/circRNA-detection/plots/miRNA/consistency_samples_1-12.png", width = 1200, height = 700)
+ png("/nfs/home/students/ciora/plots/miRNA/consistency_samples_1-12.png", width = 1200, height = 700)
  grid.arrange(plots[[1]], plots[[2]], plots[[3]], plots[[4]], plots[[5]], plots[[6]], plots[[7]], plots[[8]], plots[[9]], plots[[10]], plots[[11]], plots[[12]],  layout_matrix = rbind(c(1, 2, 3, 4), c(5, 6, 7, 8), c(9, 10, 11, 12)), top = textGrob("Consistency of miRNAs counts (paper vs. mine)", gp = gpar(fontsize = 17, font = 1)))
  dev.off()
- png("/nfs/home/students/ciora/circRNA-detection/plots/miRNA/consistency_samples_13-23.png", width = 1200, height = 700)
+ png("/nfs/home/students/ciora/plots/miRNA/consistency_samples_13-23.png", width = 1200, height = 700)
  grid.arrange(plots[[13]], plots[[14]], plots[[15]], plots[[16]], plots[[17]], plots[[18]], plots[[19]], plots[[20]], plots[[21]], plots[[22]], plots[[23]], plots[[23]],  layout_matrix = rbind(c(1, 2, 3, 4), c(5, 6, 7, 8), c(9, 10, 11, 12)), top = textGrob("Consistency of miRNAs counts (paper vs. mine)", gp = gpar(fontsize = 17, font = 1)))
  dev.off()
  

@@ -46,11 +46,11 @@ files
 
 
 library(EnrichmentBrowser)
-exprs.file <- "/data/home/students/ciora/methods/diffExp/exprs.txt"
-pdat.file <- "/data/home/students/ciora/methods/diffExp/p_data.txt"
-fdat.file <- "/data/home/students/ciora/methods/diffExp/f_data.txt"
+exprs.file <- "/nfs/home/students/ciora/methods/diffExp/exprs.txt"
+pdat.file <- "/nfs/home/students/ciora/methods/diffExp/p_data.txt"
+fdat.file <- "/nfs/home/students/ciora/methods/diffExp/f_data.txt"
 de.method <- "limma"
-out.file <- "/data/home/students/ciora/methods/diffExp/output/limma.out"
+out.file <- "/nfs/home/students/ciora/methods/diffExp/output/limma.out"
 
 message("Reading data ...")
 eset <- readSE(exprs.file, pdat.file, fdat.file)

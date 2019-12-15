@@ -3,7 +3,7 @@ library(dplyr)
 library(ggplot2)
 
 file <- "/nfs/home/students/ciora/methods/miRanda/output/circRNA_bind_sites_results.txt"
-plot_folder <- "/nfs/home/students/ciora/circRNA-detection/plots/binding_sites/"
+plot_folder <- "/nfs/home/students/ciora/plots/binding_sites/"
 raw_bindSites <- read.table(file, header = T, stringsAsFactors = F)
 bindSites <- raw_bindSites[,c(1,2)]
 
@@ -53,11 +53,11 @@ ggplot(data=scores, aes(x=Score)) + geom_histogram(fill=I("red"), col=I("red"), 
   geom_vline(xintercept=quantile(scores$Score, 0.25), linetype="dashed", 
              color = "blue", size=0.5) +
   annotate("text", x = quantile(scores$Score, 0.25) - 2, y = 1000000, label = "25%", color = "blue", angle = 90)
-ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/binding_sites/miRanda_score_distribution.png", sep = ""), width = 8, height = 4)
+ggsave(paste("/nfs/home/students/ciora/plots/binding_sites/miRanda_score_distribution.png", sep = ""), width = 8, height = 4)
 
 # fiter 25% worst scores
 filtered_scores <- raw_bindSites[raw_bindSites$Score > quantile(raw_bindSites$Score, 0.25),]
-write.table(filtered_scores, file = "/data/home/students/ciora/circRNA-detection/results/miRanda/bindsites_25%_filtered.tsv", sep = "\t", quote = F, row.names = F)
+write.table(filtered_scores, file = "/nfs/home/students/ciora/circRNA-detection/results/miRanda/bindsites_25%_filtered.tsv", sep = "\t", quote = F, row.names = F)
 filtered_scores <- filtered_scores[,c(1,2)]
 
 # redo plots after filtering
@@ -100,7 +100,7 @@ ggsave(paste(plot_folder, "all_bind_sites_histogram_filtered.png", sep=""), widt
     ggtitle("Correlation: length vs. binding sites of circRNA") +
     xlab("Number of binding sites") + ylab("Length of circRNA")
   
-  ggsave("/nfs/home/students/ciora/circRNA-detection/plots/binding_sites/corr_length_bindsites_filtered.png", width = 6, height = 4)
+  ggsave("/nfs/home/students/ciora/plots/binding_sites/corr_length_bindsites_filtered.png", width = 6, height = 4)
   
   
   

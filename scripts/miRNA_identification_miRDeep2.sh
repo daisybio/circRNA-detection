@@ -1,8 +1,8 @@
 #!/bin/bash
 files=~/data/mouse_brain_GSE100265/fastq/miRNA_SRP096019/*
-out_dir=/data/home/students/ciora/methods/miRDeep2/output/
-ref_dir=/data/home/students/ciora/methods/miRDeep2/reference/
-progress_list="/data/home/students/ciora/methods/miRDeep2/output/identification_progress.txt"
+out_dir=/nfs/home/students/ciora/methods/miRDeep2/output/
+ref_dir=/nfs/home/students/ciora/methods/miRDeep2/reference/
+progress_list="/nfs/home/students/ciora/methods/miRDeep2/output/identification_progress.txt"
 first=$1
 last=$2
 counter=0

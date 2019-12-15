@@ -1,9 +1,9 @@
 #!/bin/bash
 adapter="TGGAATTCTCGGGTGCCAAGG"
 files=~/data/mouse_brain_GSE100265/fastq/miRNA_SRP096019/*
-out_dir=/data/home/students/ciora/methods/miRDeep2/output/mapping/
-ref_prefix=/data/home/students/ciora/methods/miRDeep2/reference/mm10
-progress_list="/data/home/students/ciora/methods/miRDeep2/output/mapping_progress.txt"
+out_dir=/nfs/home/students/ciora/methods/miRDeep2/output/mapping/
+ref_prefix=/nfs/home/students/ciora/methods/miRDeep2/reference/mm10
+progress_list="/nfs/home/students/ciora/methods/miRDeep2/output/mapping_progress.txt"
 echo "Starting preprocessing"
 echo "Starting preprocessing" > $progress_list
 for f in $files

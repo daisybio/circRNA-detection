@@ -12,7 +12,7 @@ ggplot(circRNAs_unfiltered, aes(x=length)) +
   scale_x_log10(breaks = trans_breaks("log10", function(x) 10^x),
                 labels = trans_format("log10", math_format(10^.x)))
 
-ggsave("/nfs/home/students/ciora/circRNA-detection/plots/analysis/circRNA_length_distribution_unfiltered.png", width = 6, height = 4)
+ggsave("/nfs/home/students/ciora/plots/analysis/circRNA_length_distribution_unfiltered.png", width = 6, height = 4)
 
 
 f = function(x, output) {
@@ -37,4 +37,4 @@ ggplot(circRNAs_unfiltered, aes(x=length)) +
   scale_x_log10(breaks = trans_breaks("log10", function(x) 10^x),
                 labels = trans_format("log10", math_format(10^.x))) +
   geom_text(data = labeled_circRNAs, mapping = aes(label = notation, y = y_position, x = length), angle = 90, vjust = - 0.3)
-ggsave("/nfs/home/students/ciora/circRNA-detection/plots/analysis/circRNA_length_distribution_and_ATXN1.png", width = 6, height = 4)
+ggsave("/nfs/home/students/ciora/plots/analysis/circRNA_length_distribution_and_ATXN1.png", width = 6, height = 4)

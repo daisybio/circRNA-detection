@@ -84,7 +84,7 @@ ggplot(sub_dataset) + aes(x=type_rep, y=counts) +
   theme(axis.text.x = element_text(angle = 90)) + 
   ggtitle("Diversity of circular RNAs") +
   xlab("Sample") + ylab("# circular RNA") + facet_grid(~region)
-ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/amountCircRNA_before_", cutoff, ".png", sep = ""), width = 8, height = 4)
+ggsave(paste("/nfs/home/students/ciora/plots/amountCircRNA_before_", cutoff, ".png", sep = ""), width = 8, height = 4)
 dev.off()
 
 #diversity after cutoff
@@ -93,7 +93,7 @@ ggplot(sub_dataset_cutoff) + aes(x=type_rep, y=counts_cutoff) +
   theme(axis.text.x = element_text(angle = 90)) +
   ggtitle(paste("Diversity of circular RNAs with > ", cutoff, " reads", sep = "")) +
   xlab("Sample") + ylab("# circular RNA") + facet_grid(~region)
-ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/amountCircRNA_after_", cutoff, ".png", sep = ""), width = 8, height = 4)
+ggsave(paste("/nfs/home/students/ciora/plots/amountCircRNA_after_", cutoff, ".png", sep = ""), width = 8, height = 4)
 dev.off()
 
 # diversity before and after
@@ -118,7 +118,7 @@ ggplot(stacked_data) + aes(x=type_rep, y=counts, fill = cutoff)+
   scale_fill_manual(values=c("#A0A0A0", "salmon")) +
   ggtitle("Diversity of circular RNAs before and after cutoff") +
   xlab("Sample") + ylab("# circular RNA") + facet_grid(~region)
-ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/amountCircRNA_before_after_", cutoff, ".png", sep = ""), width = 8, height = 4)
+ggsave(paste("/nfs/home/students/ciora/plots/amountCircRNA_before_after_", cutoff, ".png", sep = ""), width = 8, height = 4)
 dev.off()
 
 # read distribution before cutoff
@@ -129,7 +129,7 @@ ggplot(alldata, aes(x=alldata)) + geom_histogram(aes(y=..density..*100) , colour
   geom_vline(aes(xintercept=cutoff), color="blue", linetype="dashed", size=1) +
   annotate("text", x = cutoff + 1, y = 30, label = paste("cutoff = ", cutoff, sep = ""), 
            color = "blue", angle = 270)
-ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/read_distribution_before_cutoff_", cutoff, ".png", sep=""), width = 6, height = 4)
+ggsave(paste("/nfs/home/students/ciora/plots/read_distribution_before_cutoff_", cutoff, ".png", sep=""), width = 6, height = 4)
 dev.off()
 
 # read distribution after cutoff
@@ -138,6 +138,6 @@ colnames(cutoffdata)[1] <- "reads"
 ggplot(cutoffdata, aes(x=reads)) + geom_histogram(aes(y=..density..*100),colour="black", fill="yellow", binwidth = 1)+
   xlim(cutoff,50) + ggtitle(paste("Read distribution after cutoff > ", cutoff, " (", nrow(cutoffdata)," circRNAs, all samples)", sep = "")) +
   xlab("Number of reads") + ylab("Amount of circRNAs (%)")
-ggsave(paste("/nfs/home/students/ciora/circRNA-detection/plots/read_distribution_after_cutoff_", cutoff, ".png", sep=""), width = 6, height = 4)
+ggsave(paste("/nfs/home/students/ciora/plots/read_distribution_after_cutoff_", cutoff, ".png", sep=""), width = 6, height = 4)
 dev.off()
 
